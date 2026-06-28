@@ -1,0 +1,17 @@
+{
+  "name": "taste-of-garlic-certification",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/local-preview.mjs",
+    "test": "node tests/grade.test.mjs && node tests/netlify/netlify.test.mjs"
+  },
+  "dependencies": {
+    "@netlify/blobs": "10.1.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
