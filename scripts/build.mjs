@@ -1,4 +1,4 @@
-import { copyFile, mkdir, rm } from 'node:fs/promises';
+import { copyFile, cp, mkdir, rm } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
@@ -9,6 +9,7 @@ for (const output of outputs) {
   await rm(output, { recursive: true, force: true });
   await mkdir(output, { recursive: true });
   await copyFile(path.join(projectRoot, 'Index.html'), path.join(output, 'index.html'));
+  await cp(path.join(projectRoot, 'assets'), path.join(output, 'assets'), { recursive: true });
 }
 
-console.log('Built dist/index.html and public/index.html');
+console.log('Built dist and public with the training video');

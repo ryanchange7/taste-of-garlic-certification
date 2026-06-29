@@ -222,7 +222,7 @@
         border-radius: 18px;
         box-shadow: 0 14px 30px rgba(24, 33, 27, 0.14);
       }
-      .video-shell iframe { width: 100%; height: 100%; border: 0; }
+      .video-shell video { width: 100%; height: 100%; border: 0; display: block; background: #000; }
       .training-confirmation {
         display: flex;
         gap: 13px;
@@ -476,13 +476,15 @@
           <h2 id="trainingHeading" data-i18n="trainingHeading">Watch: Creamy Garlic Fettuccines</h2>
           <p class="section-intro" data-i18n="trainingIntro">Watch the 2-minute 41-second Food Focus before beginning. It demonstrates the chicken, shrimp, and salmon builds and the finished-dish standards covered in this certification.</p>
           <div class="video-shell">
-            <iframe
-              src="https://cdnapi.kaltura.com/p/1911251/sp/191125100/embedIframeJs/uiconf_id/31428621/partner_id/1911251?iframeembed=true&amp;playerId=kaltura_player&amp;entry_id=1_ijmd9utm&amp;flashvars%5BstreamerType%5D=auto"
-              title="Olive Garden Food Focus - Creamy Garlic Fettuccines"
-              loading="lazy"
-              allow="autoplay *; fullscreen *; encrypted-media *; picture-in-picture *"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen></iframe>
+            <video
+              id="trainingVideo"
+              controls
+              preload="none"
+              playsinline
+              aria-label="Olive Garden Food Focus - Creamy Garlic Fettuccines">
+              <source src="assets/og-training.mp4" type="video/mp4">
+              Your browser does not support HTML video.
+            </video>
           </div>
           <label class="training-confirmation">
             <input id="trainingConfirmed" name="trainingConfirmed" type="checkbox" required>
